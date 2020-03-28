@@ -19,13 +19,19 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      [
+        "core",
+        ""
+      ],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      [
+        "core",
+        ""
+      ],
       "kebab-case"
     ],
     "eofline": true,
@@ -116,7 +122,8 @@
       "options": [
         "ban-keywords",
         "check-format",
-        "allow-pascal-case"
+        "allow-pascal-case",
+        "allow-leading-underscore"
       ]
     },
     "whitespace": {

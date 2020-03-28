@@ -1,0 +1,14 @@
+@import "src/@core/scss/partials/page-layouts";
+@import "src/@core/scss/partials/typography";
+
+@import "src/@core/components/sidebar/sidebar.component";
+
+@mixin core-theme($theme) {
+
+  @include page-layouts-theme($theme);
+  @include typography-theme($theme);
+
+  // Aplicação do theme nos components
+  @include core-sidebar-theme($theme);
+}
+

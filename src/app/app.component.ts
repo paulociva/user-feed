@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+import {CoreSidebarService} from '../@core/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'user-feed';
+  constructor(
+    private _coreSidebarService: CoreSidebarService
+  ) {
+  }
+
+  toggleSidebar(name): void {
+    this._coreSidebarService.getSidebar(name).toggleOpen();
+  }
 }

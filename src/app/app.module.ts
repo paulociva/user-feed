@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -9,27 +10,34 @@ import {MatIconModule} from '@angular/material/icon';
 import {CoreSidebarModule} from '@core/components/sidebar/sidebar.component';
 
 import { AppComponent } from './app.component';
-import {MatListModule} from '@angular/material/list';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import { FeedComponent } from './main/feed/feed.component';
+import {ToolbarModule} from './layout/toolbar/toolbar.module';
 
+const appRoutes: Routes = [
+  {
+    path        : 'home',
+    loadChildren: () => import('./main/feed/feed.module').then(m => m.FeedModule)
+  },
+  {
+    path      : '**',
+    redirectTo: 'home'
+  }
+];
 @NgModule({
   declarations: [
-    AppComponent,
-    FeedComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
 
     FlexLayoutModule,
 
     MatButtonModule,
     MatIconModule,
-    MatListModule,
 
     CoreSidebarModule,
-    MatTooltipModule,
+    ToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

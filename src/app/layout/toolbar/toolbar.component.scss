@@ -1,0 +1,39 @@
+:host {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  z-index: 4;
+
+  .mat-toolbar {
+    position: relative;
+    background: inherit !important;
+    color: inherit !important;
+  }
+
+  .search {
+    height: 36px;
+    line-height: 36px;
+    padding: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgb(227, 227, 227);
+    border: 1px solid rgb(227, 227, 227);
+
+    .mat-icon {
+      margin: 0;
+    }
+
+    input {
+      padding: 0 12px 0 8px;
+      height: 36px;
+      border: none;
+      background: rgb(227, 227, 227);
+      color: rgb(227, 227, 227);
+    }
+  }
+
+  .menu-button {
+    min-width: 42px;
+    height: 42px;
+  }
+}

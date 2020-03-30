@@ -1,5 +1,45 @@
 // Lista de cores do Material
 $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
+// -----------------------------------------------------------------------------------------------------
+// @ Aplica tema a classes de cores
+// -----------------------------------------------------------------------------------------------------
+@mixin colors-theme($theme) {
+
+  $is-dark: map-get($theme, is-dark);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  & {
+    color: map-get($foreground, text);
+    @if ($is-dark) {
+      background: map-get($background, background);
+    } @else {
+      background: #F5F5F5;
+    }
+  }
+
+  .secondary-text {
+    color: map-get($foreground, secondary-text);
+  }
+
+  .icon,
+  i {
+    color: map-get($foreground, icon);
+  }
+
+  .hint-text {
+    color: map-get($foreground, hint-text);
+  }
+
+  .disabled-text {
+    color: map-get($foreground, disabled-text);
+  }
+
+  .fade-text,
+  .divider {
+    color: map-get($foreground, divider);
+  }
+}
 
 // -----------------------------------------------------------------------------------------------------
 // @ Gerador de classes das cores

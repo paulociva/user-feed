@@ -1,0 +1,119 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Aplicação do theme na tipografia
+// -----------------------------------------------------------------------------------------------------
+@mixin typography-theme($theme) {
+
+  $background: map-get($theme, background);
+  $accent: map-get($theme, accent);
+  $is-dark: map-get($theme, is-dark);
+
+  a {
+    color: map-get($accent, default);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Tipografia
+// -----------------------------------------------------------------------------------------------------
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4 !important;
+  letter-spacing: -0.1px !important;
+}
+
+body {
+  font-size: 14px;
+}
+
+html, body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: normal;
+}
+
+h1, .h1 {
+  font-size: 24px;
+}
+
+h2, .h2 {
+  font-size: 20px;
+}
+
+h3, .h3 {
+  font-size: 16px;
+}
+
+h4, .h4 {
+  font-size: 15px;
+}
+
+h5, .h5 {
+  font-size: 13px;
+}
+
+h6, .h6 {
+  font-size: 12px;
+}
+
+// Links
+a {
+  text-decoration: none;
+
+  &:not(.mat-button):not(.mat-raised-button):not(.mat-flat-button):not(.mat-stroked-button):not(.mat-icon-button):not(.mat-fab):not(.mat-mini-fab) {
+
+    &:hover, &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Helpers para formatar texto
+small {
+  font-size: 80%;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-semibold {
+  font-weight: 600;
+}
+
+.text-bold,
+strong {
+  font-weight: 700;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Helpers para fontes
+@for $weight from 1 through 9 {
+  .font-weight-#{$weight * 100} {
+    font-weight: #{$weight * 100};
+  }
+}
+
+@for $size from 1 through 60 {
+  .font-size-#{$size * 2} {
+    font-size: #{$size * 2}px;
+  }
+  .line-height-#{$size * 2} {
+    line-height: #{$size * 2}px;
+  }
+}

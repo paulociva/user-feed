@@ -1,0 +1,96 @@
+// Lista de cores do Material
+$matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
+// -----------------------------------------------------------------------------------------------------
+// @ Aplica tema a classes de cores
+// -----------------------------------------------------------------------------------------------------
+@mixin colors-theme($theme) {
+
+  $is-dark: map-get($theme, is-dark);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  & {
+    color: map-get($foreground, text);
+    @if ($is-dark) {
+      background: map-get($background, background);
+    } @else {
+      background: #F5F5F5;
+    }
+  }
+
+  .secondary-text {
+    color: map-get($foreground, secondary-text);
+  }
+
+  .icon,
+  i {
+    color: map-get($foreground, icon);
+  }
+
+  .hint-text {
+    color: map-get($foreground, hint-text);
+  }
+
+  .disabled-text {
+    color: map-get($foreground, disabled-text);
+  }
+
+  .fade-text,
+  .divider {
+    color: map-get($foreground, divider);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Gerador de classes das cores
+// -----------------------------------------------------------------------------------------------------
+@mixin generate-color-classes($colorName, $color, $contrastColor, $hue) {
+  .#{$colorName}-#{$hue}-bg {
+    background-color: $color !important;
+  }
+  .#{$colorName}-#{$hue} {
+    background-color: $color !important;
+    color: $contrastColor !important;
+    &[disabled] {
+      background-color: rgba($color, .12) !important;
+      color: rgba($contrastColor, .26) !important;
+    }
+  }
+  .#{$colorName}-#{$hue}-fg {
+    color: $color !important;
+  }
+  .#{$colorName}-#{$hue}-border {
+    border-color: $color !important;
+  }
+  .#{$colorName}-#{$hue}-border-top {
+    border-top-color: $color !important;
+  }
+  .#{$colorName}-#{$hue}-border-right {
+    border-right-color: $color !important;
+  }
+  .#{$colorName}-#{$hue}-border-bottom {
+    border-bottom-color: $color !important;
+  }
+  .#{$colorName}-#{$hue}-border-left {
+    border-left-color: $color !important;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Gerador de classes das cores para todas as paletas
+// -----------------------------------------------------------------------------------------------------
+@mixin core-color-classes($palettes) {
+  // Generate the color classes...
+  @each $paletteName, $palette in $palettes {
+    // Get the contrasts map
+    $contrasts: map-get($palette, 'contrast');
+
+    @each $hue in $matHues {
+      // Get the color and the contrasting color
+      $color: map-get($palette, $hue);
+      $contrast: map-get($contrasts, $hue);
+      // Generate color classes
+      @include generate-color-classes($paletteName, $color, $contrast, $hue);
+    }
+  }
+}

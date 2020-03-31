@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Define o theme padrão
+// -----------------------------------------------------------------------------------------------------
+
+// Criar as paletas primary, accent and warn
+$default-primary-palette: mat-palette($mat-blue);
+$default-accent-palette: mat-palette($mat-blue-gray, 600, 400, 700);
+$default-warn-palette: mat-palette($mat-red);
+
+// Criar o Material theme a partir das paletas
+$theme: mat-light-theme($default-primary-palette, $default-accent-palette, $default-warn-palette);
+
+// Gera o theme default
+body.theme-default {
+  @include angular-material-theme($theme);
+  @include core-theme($theme);
+
+  // Generate Core color classes for primary, accent and warn colors
+  $palettes: (
+    primary: $default-primary-palette,
+    accent: $default-accent-palette,
+    warn: $default-warn-palette
+  );
+
+  @include  core-color-classes($palettes);
+}

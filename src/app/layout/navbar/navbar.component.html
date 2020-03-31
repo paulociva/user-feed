@@ -1,0 +1,72 @@
+<div class="navbar-content">
+  <div fxFlex="0 1 auto" class="card p-16">
+    <div class="header p-16" fxLayout="row" fxLayoutAlign="start center">
+      <img [src]="user.avatar" class="avatar big mr-20" [alt]="user.name"/>
+      <span class="font-size-18">{{user.name}}</span>
+    </div>
+
+    <div class="content py-16">
+      <div class="nav">
+        <div class="nav-item" aria-label="Página Inicial">
+          <a class="nav-link">
+            <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">home</mat-icon>
+            <span class="nav-link-title">Página Inicial</span>
+          </a>
+        </div>
+        <div class="nav-item" aria-label="Direct">
+          <a class="nav-link">
+            <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">send</mat-icon>
+            <span class="nav-link-title">Direct</span>
+          </a>
+        </div>
+
+        <div class="nav-item" aria-label="Shopping">
+          <a class="nav-link">
+            <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">shopping_cart</mat-icon>
+            <span class="nav-link-title">Shopping</span>
+          </a>
+        </div>
+        <div class="nav-item nav-collapsable" [ngClass]="{'open': isOpen}" aria-label="Redes">
+          <a class="nav-link" (click)="toggleOpen($event)">
+            <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">language</mat-icon>
+            <span class="nav-link-title">Redes</span>
+            <mat-icon class="collapsable-arrow">keyboard_arrow_right</mat-icon>
+          </a>
+          <div class="children" [@slideInOut]="isOpen">
+            <div class="nav-item" aria-label="Facebook">
+              <a class="nav-link">
+                <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">help</mat-icon>
+                <span class="nav-link-title secondary-text">Facebook</span>
+              </a>
+            </div>
+            <div class="nav-item" aria-label="Twitter">
+              <a class="nav-link">
+                <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">help</mat-icon>
+                <span class="nav-link-title secondary-text">Twitter</span>
+              </a>
+            </div>
+            <div class="nav-item" aria-label="Instagram">
+              <a class="nav-link">
+                <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">help</mat-icon>
+                <span class="nav-link-title secondary-text">Instagram</span>
+              </a>
+            </div>
+            <div class="nav-item" aria-label="Google">
+              <a class="nav-link">
+                <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">help</mat-icon>
+                <span class="nav-link-title secondary-text">Google</span>
+              </a>
+            </div>
+            <div class="nav-item" aria-label="Pinterest">
+              <a class="nav-link">
+                <mat-icon fontSet="material-icons-outlined" class="nav-link-icon primary-100-fg mr-16">help</mat-icon>
+                <span class="nav-link-title secondary-text">Pinterest</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

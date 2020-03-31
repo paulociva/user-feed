@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Aplicação do theme
+// -----------------------------------------------------------------------------------------------------
+@mixin page-layouts-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .page-layout {
+    &.simple {
+      &.left-sidebar {
+        > .center {
+          > .content {
+            background: map-get($background, card);
+          }
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Layout geral da pagina
+// -----------------------------------------------------------------------------------------------------
+$header-height: 48px !default;
+
+.page-layout {
+  position: relative;
+  overflow: hidden;
+
+  &.simple {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    height: 100%;
+    width: 100%;
+    min-width: 100%;
+
+
+    &.left-sidebar {
+
+      > .header {
+        height: $header-height;
+        min-height: $header-height;
+        max-height: $header-height;
+      }
+
+      > .content {
+        display: flex;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        > .sidebar {
+
+          &.locked-open {
+            height: 100%;
+            overflow: visible;
+            background: none;
+            box-shadow: none;
+          }
+        }
+
+        > .center {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}
+
+

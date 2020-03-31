@@ -1,0 +1,44 @@
+<mat-toolbar class="p-0 mat-elevation-z1" fxLayoutAlign="center">
+  <div fxFlex="0 1 1290px" fxLayout="row" fxLayoutAlign="start center">
+    <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+      <button mat-icon-button class="navbar-toggle-button" fxHide.gt-md
+              (click)="toggleSidebarOpen('home-sidebar')">
+        <mat-icon class="secondary-text">menu</mat-icon>
+      </button>
+
+      <div class="search-wrapper" fxFlex fxLayout="row" fxLayoutAlign="start center">
+        <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon class="s-16 secondary-text">search</mat-icon>
+          <input type="text" placeholder="Pesquisa" fxFlex>
+        </div>
+      </div>
+
+    </div>
+
+    <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="center center">
+      <h1 class="primary-500-fg font-size-32 font-weight-700">TESTE_LOGO</h1>
+    </div>
+
+    <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+      <button mat-icon-button class="menu-button mr-8" aria-label="Acessar o seu perfil">
+        <img class="avatar" src="assets/images/avatars/Joao.jpg">
+      </button>
+
+      <button mat-icon-button class="menu-button" aria-label="Ir para Home">
+        <mat-icon fontSet="material-icons-outlined" class="secondary-text">home</mat-icon>
+      </button>
+
+      <button mat-icon-button class="menu-button" aria-label="Exibir grupos">
+        <mat-icon fontSet="material-icons-outlined" class="secondary-text">group</mat-icon>
+      </button>
+
+      <button mat-icon-button class="menu-button" aria-label="Exibir notificações">
+        <mat-icon fontSet="material-icons-outlined" class="secondary-text">notifications</mat-icon>
+      </button>
+
+      <button mat-icon-button class="menu-button" aria-label="Acessar ajuda">
+        <mat-icon class="secondary-text">help</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>

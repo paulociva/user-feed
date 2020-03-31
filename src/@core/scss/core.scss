@@ -1,0 +1,10 @@
+// Ferramentas do Material
+@import '~@angular/material/theming';
+
+// SCSS gerais que precisam de aplicação de theme
+@import "theme";
+
+// SCSS gerais para aplicação
+@import "partials/colors";
+@import "partials/general";
+@import "partials/helpers";

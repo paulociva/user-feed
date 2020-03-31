@@ -1,0 +1,101 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  height: 100%;
+
+  .navbar-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    /*
+    @include media-breakpoint(gt-sm) {
+      padding: 24px 4px 24px 24px;
+    }
+    */
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 auto;
+      padding: 0;
+      border-radius: 8px;
+      background-color: white;
+
+      /*
+      @include media-breakpoint(gt-sm) {
+        @include mat-elevation(1);
+      }
+      */
+
+      > .header {
+        flex: 0 1 auto;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      }
+
+      > .content {
+        flex: 0 1 auto;
+
+        .nav {
+          .nav-item {
+            .nav-link {
+              text-decoration: none !important;
+              display: flex;
+              align-items: center;
+              height: 48px;
+              padding: 0 12px;
+              position: relative;
+              overflow: hidden;
+              cursor: pointer;
+              user-select: none;
+              color: currentColor;
+
+              > .nav-link-title {
+                flex: 1 1 auto;
+                white-space: nowrap;
+              }
+
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.04);
+              }
+
+              .collapsable-arrow {
+                font-size: 16px;
+                width: 16px;
+                height: 16px;
+                min-width: 16px;
+                min-height: 16px;
+                line-height: 16px;
+                transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;
+                transform: rotate(0);
+              }
+            }
+
+            &.nav-collapsable {
+              display: block;
+
+              > .children {
+                overflow: hidden;
+
+                > .nav-item {
+                  > .nav-link {
+                    padding-left: 56px;
+                  }
+                }
+              }
+            }
+
+            &.open {
+              > .nav-link {
+                .collapsable-arrow {
+                  transform: rotate(90deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

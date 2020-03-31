@@ -3,7 +3,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {CoreSidebarService} from '@core/components/sidebar/sidebar.service';
 
 @Component({
-  selector: 'toolbar',
+  selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })

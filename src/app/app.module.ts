@@ -11,6 +11,7 @@ import {CoreSidebarModule} from '@core/components/sidebar/sidebar.component';
 
 import { AppComponent } from './app.component';
 import {ToolbarModule} from './layout/toolbar/toolbar.module';
+import {NavbarModule} from './layout/navbar/navbar.module';
 
 const appRoutes: Routes = [
   {
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
 
     CoreSidebarModule,
     ToolbarModule,
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

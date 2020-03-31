@@ -45,10 +45,10 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
 // @ Gerador de classes das cores
 // -----------------------------------------------------------------------------------------------------
 @mixin generate-color-classes($colorName, $color, $contrastColor, $hue) {
-  .#{$colorName}#{$hue}-bg {
+  .#{$colorName}-#{$hue}-bg {
     background-color: $color !important;
   }
-  .#{$colorName}#{$hue} {
+  .#{$colorName}-#{$hue} {
     background-color: $color !important;
     color: $contrastColor !important;
     &[disabled] {
@@ -56,22 +56,22 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
       color: rgba($contrastColor, .26) !important;
     }
   }
-  .#{$colorName}#{$hue}-fg {
+  .#{$colorName}-#{$hue}-fg {
     color: $color !important;
   }
-  .#{$colorName}#{$hue}-border {
+  .#{$colorName}-#{$hue}-border {
     border-color: $color !important;
   }
-  .#{$colorName}#{$hue}-border-top {
+  .#{$colorName}-#{$hue}-border-top {
     border-top-color: $color !important;
   }
-  .#{$colorName}#{$hue}-border-right {
+  .#{$colorName}-#{$hue}-border-right {
     border-right-color: $color !important;
   }
-  .#{$colorName}#{$hue}-border-bottom {
+  .#{$colorName}-#{$hue}-border-bottom {
     border-bottom-color: $color !important;
   }
-  .#{$colorName}#{$hue}-border-left {
+  .#{$colorName}-#{$hue}-border-left {
     border-left-color: $color !important;
   }
 }
@@ -90,7 +90,7 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
       $color: map-get($palette, $hue);
       $contrast: map-get($contrasts, $hue);
       // Generate color classes
-      @include generate-color-classes($paletteName, $color, $contrast, '');
+      @include generate-color-classes($paletteName, $color, $contrast, $hue);
     }
   }
 }

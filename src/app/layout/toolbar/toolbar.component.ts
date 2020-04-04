@@ -10,6 +10,11 @@ import {CoreSidebarService} from '@core/components/sidebar/sidebar.service';
 
 export class ToolbarComponent {
 
+  user = {
+    id: '5725a6802d10e277a0f35724',
+    name: 'Seu Nome',
+    avatar: 'assets/images/avatars/profile.jpg',
+  };
   constructor(
     private _coreSidebarService: CoreSidebarService
   ) {}

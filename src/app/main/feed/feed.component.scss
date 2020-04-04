@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+
+app-feed {
+  flex: 1 1 auto;
+
+  .timeline-content {
+    .add-post,
+    .reply {
+
+      .mat-form-field-wrapper {
+        padding: 0;
+
+        .mat-form-field-flex {
+          padding: 0;
+
+          .mat-form-field-infix {
+            padding: 0;
+            border: none;
+
+            textarea {
+              overflow: hidden;
+              padding: 0;
+            }
+          }
+        }
+
+        .mat-form-field-underline {
+          display: none !important;
+        }
+      }
+
+    }
+
+  }
+
+}

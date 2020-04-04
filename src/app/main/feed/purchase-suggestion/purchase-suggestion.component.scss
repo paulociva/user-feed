@@ -1,0 +1,15 @@
+:host {
+  .suggestions {
+    background-color: #e4e4e4;
+    border-radius: 4px;
+
+    .suggestion {
+      background-color: white;
+
+      img {
+        max-width: 100%;
+        margin: auto;
+      }
+    }
+  }
+}

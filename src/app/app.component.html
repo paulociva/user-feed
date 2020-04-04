@@ -1,10 +1,13 @@
+<!--<div class="page-layout simple left-sidebar">-->
 <div class="page-layout simple left-sidebar">
   <app-toolbar></app-toolbar>
 
   <div class="content">
-    <core-sidebar class="sidebar" name="home-sidebar" position="left" lockedOpen="gt-md" fxFlex.gt-md="25">
-      <app-navbar class="p-24"></app-navbar>
-    </core-sidebar>
-    <router-outlet></router-outlet>
+    <div class="center">
+      <core-sidebar class="sidebar" name="home-sidebar" position="left" lockedOpen="gt-md" fxFlex.gt-md="20">
+        <app-navbar class="py-24"></app-navbar>
+      </core-sidebar>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

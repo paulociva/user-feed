@@ -1,0 +1,58 @@
+<div class="store-box px-16 mb-16 core-card" fxLayout="column">
+
+  <header fxLayout="row" fxLayoutAlign="start center">
+    <h3 class="primary-500-fg font-weight-600">Suas Lojas</h3>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </header>
+
+  <div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="store">
+      <img [src]="store.avatar" class="avatar big mr-16" alt="{{store.name}}"/>
+      <div fxLayout="column">
+        <h3 class="m-0 font-weight-600 primary-500-fg">{{store.name}}</h3>
+        <div class="my-4" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontSet="material-icons-outlined secondary-text">chat_bubble_outline</mat-icon>
+          <span class="mx-12">Mensagens</span>
+          <span class="badge primary-500"> {{store.messages}}</span>
+        </div>
+        <div class="my-4" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontSet="material-icons-outlined secondary-text">notifications</mat-icon>
+          <span class="mx-12">Notificações</span>
+          <span class="badge primary-500"> {{store.notifications}}</span>
+        </div>
+
+      </div>
+    </div>
+    <mat-divider class="my-12"></mat-divider>
+    <button mat-flat-button fxFlexFill class="py-16 font-size-18 primary-500">Negociar</button>
+    <mat-divider class="my-12"></mat-divider>
+    <div class="store-info my-8" fxLayout="column">
+      <mat-button-toggle-group fxFlexFill name="options" value="curtidas" aria-label="Selecione uma opção">
+        <mat-button-toggle fxFlex="grow" value="vendidos">Vendidos</mat-button-toggle>
+        <mat-button-toggle fxFlex="grow" value="curtidas">Curtidas</mat-button-toggle>
+        <mat-button-toggle fxFlex="grow" value="afiliados">Afiliados</mat-button-toggle>
+      </mat-button-toggle-group>
+      <div class="m-8" fxLayout="column" fxLayoutAlign="center center">
+        <span class="m-4 font-size-18">{{store.likes}}</span>
+        <span class="m-4">{{store.newLikes}} novas curtidas esta semana</span>
+      </div>
+    </div>
+    <mat-divider class="my-12"></mat-divider>
+    <div class="store-sale">
+      <h3 class="font-weight-600 primary-500-fg">Última venda</h3>
+      <div fxLayout="row" fxLayoutAlign="start start">
+        <img [src]="store.sale.image">
+        <div fxFlex class="ml-16">
+          <h3 class="m-0 font-weight-600">{{store.sale.name}}</h3>
+          <h3 class="m-0 font-weight-600 primary-500-fg">R$ {{store.sale.price}}</h3>
+          <div class="my-20" fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon fontSet="material-icons-outlined" class="mx-12 secondary-text">favorite_border</mat-icon>
+            <span> {{store.sale.likes}}</span>
+            <mat-icon fontSet="material-icons-outlined" class="mx-12 secondary-text">shopping_basket</mat-icon>
+            <span> {{store.sale.sales}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

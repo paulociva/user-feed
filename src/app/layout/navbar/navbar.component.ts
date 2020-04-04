@@ -22,7 +22,7 @@ export class NavbarComponent {
   user = {
     id: '5725a6802d10e277a0f35724',
     name: 'Seu Nome',
-    avatar: 'assets/images/avatars/Joao.jpg',
+    avatar: 'assets/images/avatars/profile.jpg',
   };
 
   isOpen = false;

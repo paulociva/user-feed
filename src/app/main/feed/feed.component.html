@@ -1,0 +1,20 @@
+<div class="py-24" fxLayout="column" fxLayout.gt-sm="row" ngClass.lt-lg="px-12">
+  <div class="timeline-content" ngClass.gt-md="pl-24" fxLayout="column" fxFlex="100" fxFlex.gt-sm="60">
+    <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center" class="add-post px-16 core-card">
+      <img class="avatar" [src]="user.avatar">
+      <form fxFlex fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field class="p-12" fxFlex floatLabel="never" appearance="standard">
+          <textarea matInput name="message" placeholder="O que você está sentindo?"
+                    class="py-20 font-size-16"
+                    [rows]="1" [matTextareaAutosize]="true"></textarea>
+        </mat-form-field>
+      </form>
+    </div>
+    <app-timeline></app-timeline>
+  </div>
+
+  <div ngClass.lt-md="pt-24" ngClass.gt-sm="pl-24" fxLayout="column" fxFlex="100" fxFlex.gt-sm="40">
+    <app-store></app-store>
+    <app-purchase-suggestion></app-purchase-suggestion>
+  </div>
+</div>

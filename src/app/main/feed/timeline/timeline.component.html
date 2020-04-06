@@ -1,0 +1,100 @@
+<div class="timeline-item core-card mt-16" *ngFor="let post of timeline.posts">
+
+  <header class="p-16" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="user" fxLayout="row" fxLayoutAlign="start center">
+      <img class="avatar big" [src]="post.user.avatar">
+      <div fxLayout="column">
+        <div>
+          <span class="username font-weight-600">{{post.user.name}}</span>
+          <span *ngIf="post.type === 'shared'"> está com
+                <span class="primary-500-fg font-weight-600">{{user.name}}</span>
+                e mais <span class="primary-500-fg font-weight-600">5 pessoas</span>
+              </span>
+        </div>
+        <div class="secondary-text font-weight-600">
+          {{post.time}}
+        </div>
+      </div>
+    </div>
+
+    <button mat-icon-button disableRipple aria-label="More">
+      <mat-icon class="secondary-text">more_vert</mat-icon>
+    </button>
+  </header>
+
+  <div class="content">
+    <div *ngIf="post.message" class="px-16">
+      {{post.message}}
+    </div>
+    <div [ngClass]="{'mt-16': post.message}" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="16px grid">
+      <div *ngFor="let media of post.medias">
+        <img [src]="media.preview">
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="p-16 mx-8">
+      <div fxFlex>
+            <span fxLayout="row" fxLayoutAlign="start center">
+              <mat-icon class="mr-8 primary-500-fg">favorite</mat-icon>
+              <span class="secondary-text text-center">{{post.like}} {{post.like > 1 ? 'curtidas' : 'curtida'}}</span>&nbsp;
+            </span>
+      </div>
+      <div fxFlex fxLayout="row" fxLayoutAlign="end center">
+        <span fxLayout="row" class="mr-12 secondary-text text-center">
+          {{post.comments.length}} {{post.comments.length > 1 ? 'comentários' : 'comentário'}}
+        </span>
+        <span fxLayout="row" class="secondary-text text-center">
+          {{post.share}} {{post.share > 1 ? 'compartilhamentos' : 'compartilhamento'}}
+        </span>
+      </div>
+    </div>
+    <mat-divider class="mx-16"></mat-divider>
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="p-8">
+      <button mat-button disableRipple fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="mr-8 primary-500-fg">favorite</mat-icon>
+        <span class="primary-500-fg" fxHide.lt-sm>Curtir</span>
+      </button>
+      <button mat-button disableRipple fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="mr-8 secondary-text">mode_comment</mat-icon>
+        <span class="secondary-text" fxHide.lt-sm>Comentar</span>&nbsp;
+      </button>
+      <button mat-button disableRipple fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="mr-8 secondary-text">share</mat-icon>
+        <span class="secondary-text" fxHide.lt-sm>Compartilhar</span>&nbsp;
+      </button>
+    </div>
+  </div>
+  <mat-divider class="mx-16"></mat-divider>
+
+  <footer class="p-16" fxLayout="column" fxLayoutAlign="start start">
+    <div class="comment mb-24" fxFlexFill
+         *ngFor="let comment of post.comments">
+      <div fxLayout="row" fxFlexFill fxLayoutAlign="start center">
+        <img [src]="comment.user.avatar" class="avatar"/>
+
+        <div fxFlex fxLayout="column">
+          <div class="message p-8" fxLayout="row" fxLayoutAlign="start center">
+            <span class="username">{{comment.user.name}}</span>
+            {{comment.message}}
+          </div>
+        </div>
+        <mat-icon class="mx-16 my-auto secondary-text">favorite</mat-icon>
+      </div>
+      <div class="ml-48" fxLayout="row" fxLayoutAlign="start center">
+        <a href="#" class="mr-16">Responder</a>
+        <span class="time">{{comment.time}}</span>
+      </div>
+    </div>
+    <div fxFlex fxLayout="row" fxFlexFill fxLayoutAlign="start center" class="reply">
+      <img class="avatar" [src]="user.avatar">
+      <form fxFlex="grow" fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field fxFlex floatLabel="never" appearance="standard">
+              <textarea matInput name="message" placeholder="Escreva seu comentário..."
+                        class="py-16 px-12 font-size-16" [rows]="1" [matTextareaAutosize]="true"></textarea>
+        </mat-form-field>
+        <mat-icon fontSet="material-icons-outlined" class="secondary-text">insert_emoticon</mat-icon>
+        <mat-icon fontSet="material-icons-outlined" class="secondary-text mx-12">photo_camera</mat-icon>
+      </form>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,60 @@
+
+.timeline-item {
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .content {
+
+    .article {
+      border: 1px solid;
+      margin: 16px;
+
+      .media {
+        padding: 0;
+        overflow: hidden;
+        border-bottom: 1px solid;
+
+        img {
+          display: block;
+          padding: 0;
+        }
+      }
+
+      .title {
+        font-size: 15px;
+        padding: 16px 16px 4px 16px;
+      }
+
+      .subtitle {
+        padding: 0 16px;
+      }
+
+      .excerpt {
+        padding: 16px 16px;
+      }
+    }
+  }
+
+  footer {
+    .comment {
+      .message {
+        border-radius: 4px;
+        background-color: #e4e4e4;
+      }
+
+      .username {
+        font-weight: 600;
+        margin-right: 4px;
+      }
+    }
+    .reply {
+      form {
+        border-radius: 4px;
+        background-color: #e4e4e4;
+      }
+    }
+  }
+}

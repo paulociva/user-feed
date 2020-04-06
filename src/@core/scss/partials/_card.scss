@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Theming
+// -----------------------------------------------------------------------------------------------------
+@mixin cards-theme($theme) {
+
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .core-card {
+    background: map-get($background, card);
+    border-color: map-get($foreground, divider);
+  }
+}
+
+.core-card{
+  border-radius: 4px;
+  @include mat-elevation(2);
+}

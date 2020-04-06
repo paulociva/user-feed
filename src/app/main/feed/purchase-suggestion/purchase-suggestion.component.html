@@ -1,0 +1,11 @@
+<div class="mb-16 px-16 core-card" fxLayout="column">
+  <header fxLayout="row" fxLayoutAlign="start center">
+    <h3 class="font-weight-600 primary-500-fg">Sugestões de compra</h3>
+  </header>
+
+  <div class="suggestions p-4" fxLayout="row wrap">
+    <div class="suggestion p-4 m-4" fxFlex="auto" fxLayoutAlign="center" *ngFor="let suggestion of suggestions">
+      <img [src]="suggestion.image">
+    </div>
+  </div>
+</div>

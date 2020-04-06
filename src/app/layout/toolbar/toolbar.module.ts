@@ -5,6 +5,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {ToolbarComponent} from 'app/layout/toolbar/toolbar.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatMenuModule,
   ],
   exports: [
     ToolbarComponent
